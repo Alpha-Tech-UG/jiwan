@@ -7,6 +7,7 @@
 	<title>Jiwan Professionals | Home</title>
 	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
 	<link rel="stylesheet" href="css/main.css">
@@ -598,7 +599,7 @@
 							<h1 class="light-font">Send us a message</h1>
 							<p class="light-font">Feel free to make an inquiry or even leave a comment.</p>
 						</div>
-						<form action="https://docs.google.com/forms/d/e/1FAIpQLSfqe_moSPRxC9R5WO7dQXIsyTKyQiFBK_r-2fQ0sece0OU3FA/formResponse?" class="form-horizontal" id="formx">
+						<form id="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfqe_moSPRxC9R5WO7dQXIsyTKyQiFBK_r-2fQ0sece0OU3FA/formResponse?" class="form-horizontal" id="formx">
 							<div class="form-group">
 								<div class="col-sm-4" style="position:relative">
 									<input type="text" name="entry.2005620554" data-new-placeholder="What is your name?" class="form-control label_better" placeholder="Name">
@@ -613,13 +614,23 @@
 							
 							<div class="form-group">
 								<div class="col-sm-12">
-									<textarea  name="entry.839337160" class="form-control label_better" placeholder="Your comment.." rows="7" required></textarea>
+									<textarea  name="entry.839337160" class="form-control label_better" placeholder="Your message..." rows="7" required></textarea>
 								</div>
 							</div>
 							<div class="form-group commands">
 								<button class="btn btn-primary">Send message</button>
 							</div>
+							<script src="assets/js/jquery.min.js"></script>
+							<script type="text/javascript">var submitted=false;</script>
+							<script type="text/javascript">
+							$('#gform').on('submit', function(e) {
+							$('#gform *').fadeOut(2000);
+							$('#gform').prepend('Your submission has been processed, Thank you...');
+							});
+							</script>
 						</form>
+						<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
 						
 					</div>
 				</div>
